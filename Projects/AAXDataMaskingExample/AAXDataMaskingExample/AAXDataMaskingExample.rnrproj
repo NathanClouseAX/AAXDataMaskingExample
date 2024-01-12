@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <BuildTasksDirectory Condition=" '$(BuildTasksDirectory)' == ''">$(MSBuildProgramFiles32)\MSBuild\Microsoft\Dynamics\AX</BuildTasksDirectory>
+    <Model>AAXDataMaskingExample</Model>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <OutputPath>bin</OutputPath>
+    <SchemaVersion>2.0</SchemaVersion>
+    <GenerateCrossReferences>True</GenerateCrossReferences>
+    <RunAppCheckerRules>False</RunAppCheckerRules>
+    <LogAppcheckerDiagsAsErrors>False</LogAppcheckerDiagsAsErrors>
+    <DeployOnline>False</DeployOnline>
+    <ProjectGuid>{3c6279d7-ceff-43be-a5aa-34f8e5b3ae3c}</ProjectGuid>
+    <Name>AAXDataMaskingExample</Name>
+    <RootNamespace>AAXDataMaskingExample</RootNamespace>
+    <StartupType>Class</StartupType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <Configuration>Debug</Configuration>
+    <DBSyncInBuild>False</DBSyncInBuild>
+    <GenerateFormAdaptors>False</GenerateFormAdaptors>
+    <Company>
+    </Company>
+    <Partition>initial</Partition>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DataEntityExpandParentChildRelations>False</DataEntityExpandParentChildRelations>
+    <DataEntityUseLabelTextAsFieldName>False</DataEntityUseLabelTextAsFieldName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Classes\" />
+    <Folder Include="EDT Enums\" />
+    <Folder Include="Form Extensions\" />
+    <Folder Include="Table Extensions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AxClass\HcmPersonIdentificationNumber_AAXDataMaskingExample_Extension">
+      <SubType>Content</SubType>
+      <Name>HcmPersonIdentificationNumber_AAXDataMaskingExample_Extension</Name>
+      <Link>Classes\HcmPersonIdentificationNumber_AAXDataMaskingExample_Extension</Link>
+    </Content>
+    <Content Include="AxEdt\MaskOnView">
+      <SubType>Content</SubType>
+      <Name>MaskOnView</Name>
+      <Link>EDT Enums\MaskOnView</Link>
+    </Content>
+    <Content Include="AxFormExtension\HcmIdentificationType.AAXDataMaskingExample">
+      <SubType>Content</SubType>
+      <Name>HcmIdentificationType.AAXDataMaskingExample</Name>
+      <Link>Form Extensions\HcmIdentificationType.AAXDataMaskingExample</Link>
+    </Content>
+    <Content Include="AxTableExtension\HcmIdentificationType.AAXDataMaskingExample">
+      <SubType>Content</SubType>
+      <Name>HcmIdentificationType.AAXDataMaskingExample</Name>
+      <Link>Table Extensions\HcmIdentificationType.AAXDataMaskingExample</Link>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
+  <Import Project="$(BuildTasksDirectory)\Microsoft.Dynamics.Framework.Tools.BuildTasks.targets" />
+</Project>

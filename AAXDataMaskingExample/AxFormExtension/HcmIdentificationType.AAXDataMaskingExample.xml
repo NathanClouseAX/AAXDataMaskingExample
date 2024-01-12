@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxFormExtension xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="Microsoft.Dynamics.AX.Metadata.V6">
+	<Name>HcmIdentificationType.AAXDataMaskingExample</Name>
+	<ControlModifications />
+	<Controls>
+		<AxFormExtensionControl xmlns="">
+			<Name>FormExtensionControlrtxektee1</Name>
+			<FormControl xmlns=""
+				i:type="AxFormCheckBoxControl">
+				<Name>HcmIdentificationType_MaskOnView</Name>
+				<Type>CheckBox</Type>
+				<FormControlExtension
+					i:nil="true" />
+				<DataField>MaskOnView</DataField>
+				<DataSource>HcmIdentificationType</DataSource>
+			</FormControl>
+			<Parent>IdentificationDetails</Parent>
+		</AxFormExtensionControl>
+	</Controls>
+	<DataSourceModifications />
+	<DataSourceReferences />
+	<DataSources />
+	<Parts />
+	<PropertyModifications />
+</AxFormExtension>

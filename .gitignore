@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/bin
+/XppMetadata/AAXDataMaskingExample/AxClass
+/BuildProjectResult.xml
+/BuildProjectResult.log
+/BuildProjectResult.err.xml

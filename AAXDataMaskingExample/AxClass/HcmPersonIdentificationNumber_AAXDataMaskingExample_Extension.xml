@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>HcmPersonIdentificationNumber_AAXDataMaskingExample_Extension</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+[ExtensionOf(tableStr(HcmPersonIdentificationNumber))]
+final class HcmPersonIdentificationNumber_AAXDataMaskingExample_Extension
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>applyIdentificationNumberFormat</Name>
+				<Source><![CDATA[
+    public static HcmIdentificationNumber applyIdentificationNumberFormat(
+        HcmIdentificationNumberFormat _identificationNumberFormat,
+        HcmIdentificationNumber _identificationNumber)
+    {
+        HcmIdentificationNumber ret = next applyIdentificationNumberFormat(_identificationNumberFormat, _identificationNumber);
+
+        HcmPersonIdentificationNumber HcmPersonIdentificationNumber;
+
+        select *
+            from HcmPersonIdentificationNumber
+            where HcmPersonIdentificationNumber.IdentificationNumber == _identificationNumber;
+
+        HcmIdentificationType HcmIdentificationType = HcmIdentificationType::find(HcmPersonIdentificationNumber.IdentificationType);
+
+        if(HcmIdentificationType.MaskOnView == NoYes::Yes)
+        {
+            ret = "********";
+        }
+    
+        return ret;
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>
